@@ -46,7 +46,6 @@ public class PrincipalV extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -83,10 +82,10 @@ public class PrincipalV extends javax.swing.JFrame {
         txt_mail.setText("Email");
         getContentPane().add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 260, 27));
 
-        txt_puntos.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txt_puntos.setForeground(new java.awt.Color(255, 255, 255));
+        txt_puntos.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        txt_puntos.setForeground(java.awt.Color.red);
         txt_puntos.setText("Score");
-        getContentPane().add(txt_puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 80, 50, 27));
+        getContentPane().add(txt_puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 80, 60, 27));
 
         jToggleButton2.setFont(new java.awt.Font("Plok", 1, 24)); // NOI18N
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,20 +140,6 @@ public class PrincipalV extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 600, 140, 100));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Regresar.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentRemoved(java.awt.event.ContainerEvent evt) {
-                jLabel5ComponentRemoved(evt);
-            }
-        });
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, 100, 80));
-
         jLabel8.setFont(new java.awt.Font("SimLLHP", 1, 48)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("User Information");
@@ -201,15 +186,6 @@ public class PrincipalV extends javax.swing.JFrame {
         Ordenamiento m = new Ordenamiento();
         m.setVisible(true);
     }//GEN-LAST:event_jToggleButton2MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        actualizaPuntos();
-        LogIn_SignUp.ok.update();
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel5ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jLabel5ComponentRemoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5ComponentRemoved
 
     private void HangmanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HangmanMouseClicked
         desordenarLista();
@@ -270,7 +246,6 @@ public class PrincipalV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

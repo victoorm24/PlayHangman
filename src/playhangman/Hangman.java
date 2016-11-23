@@ -19,7 +19,8 @@ public class Hangman extends javax.swing.JFrame {
      */
     public Hangman() {
         initComponents();
-        this.setTitle("HANGMAN - ");
+       
+        this.setTitle("HANGMAN - Level Hard");
         this.setLocation(50, 0);
         this.jLPuntos.setText(Integer.toString(ConsultasBD.UsuarioLogin.getPuntos()));
         generador();
@@ -29,7 +30,7 @@ public class Hangman extends javax.swing.JFrame {
     public void monitoVasMriendo(){
         try {
             ImageIcon Icono = new javax.swing.ImageIcon(getClass().getResource("/Persona/" + Integer.toString(failure) + ".png"));
-            Icon icono = new javax.swing.ImageIcon(Icono.getImage().getScaledInstance(115, 157, Image.SCALE_DEFAULT));
+            Icon icono = new javax.swing.ImageIcon(Icono.getImage().getScaledInstance(318, 303, Image.SCALE_DEFAULT));
             jLHorca.setIcon(icono);
         } catch (Exception e) {
         }
@@ -72,7 +73,6 @@ public class Hangman extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jL_Frase = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -80,11 +80,17 @@ public class Hangman extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLHorca = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(300, 100));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.setForeground(java.awt.Color.red);
+        jPanel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -515,97 +521,57 @@ public class Hangman extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Regresar.png"))); // NOI18N
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("SimLLHP", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Regresar.gif"))); // NOI18N
+        jLabel1.setText("Return to the start menu");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 70));
 
-        jLabel22.setText("Instrucciones: con una imagen (400 x50)en igles cada letra de un color ");
+        jL_Frase.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jL_Frase.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jL_Frase, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 240, 30));
 
-        jL_Frase.setFont(new java.awt.Font("Adobe Arabic", 0, 24)); // NOI18N
-        jL_Frase.setForeground(new java.awt.Color(102, 0, 0));
+        jLImagen.setForeground(new java.awt.Color(255, 255, 255));
+        jLImagen.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, java.awt.Color.red));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 240, 190));
 
-        jLImagen.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 204), 5, true));
+        jLabel30.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Score:");
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 80, -1));
 
-        jLabel30.setText("Puntos");
+        jLPuntos.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLPuntos.setForeground(java.awt.Color.red);
+        jLPuntos.setText("Puntos");
+        getContentPane().add(jLPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, -1, -1));
 
-        jLPuntos.setText("jLabel7");
+        jLabel31.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 390, 30));
 
-        jLabel31.setFont(new java.awt.Font("NSimSun", 3, 12)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel31.setText("jLabel31");
+        jLHorca.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, java.awt.Color.red));
+        getContentPane().add(jLHorca, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 318, 300));
 
-        jLHorca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 204), 5, true));
+        jLabel32.setFont(new java.awt.Font("SimLLHP", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("THE Hangman");
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 540, 140, -1));
 
-        jLabel32.setFont(new java.awt.Font("Adobe Arabic", 2, 18)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel32.setText("Hangman");
+        jLabel22.setFont(new java.awt.Font("Plok", 1, 18)); // NOI18N
+        jLabel22.setForeground(java.awt.Color.red);
+        jLabel22.setText("Translation of image");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 380, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(68, 68, 68)
-                .addComponent(jLabel22)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jL_Frase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(26, 105, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLPuntos)
-                                .addGap(190, 190, 190)
-                                .addComponent(jLImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                        .addComponent(jLHorca, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(83, 83, 83))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 6, Short.MAX_VALUE)
-                                .addComponent(jLImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLPuntos)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(jLHorca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jL_Frase, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Hangman.jpg"))); // NOI18N
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -616,6 +582,7 @@ public class Hangman extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         palabraescrita += "q";
+        
         jL_Frase.setText(palabraescrita);
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -746,8 +713,8 @@ public class Hangman extends javax.swing.JFrame {
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         if(PrincipalV.SeleccionLista.get(Pos-1).getIng().toUpperCase().compareTo(palabraescrita.toUpperCase()) == 0){
-            Sonidos.ganador.play();
-            JOptionPane.showMessageDialog(null, "Muy bien as ganado 5 punto");
+            Sonidos.ganador2.play();
+            JOptionPane.showMessageDialog(null, "Felicidades has ganado 5 puntos");
             ConsultasBD.UsuarioLogin.setPuntos(5);
             jLPuntos.setText(Integer.toString(ConsultasBD.UsuarioLogin.getPuntos()));
         } else {
@@ -756,10 +723,10 @@ public class Hangman extends javax.swing.JFrame {
                 this.setVisible(false);
                 return;
             }
-            Sonidos.perdedor.play();
+            Sonidos.perdedor2.play();
             failure ++;
             monitoVasMriendo();
-            JOptionPane.showMessageDialog(null, "Muy mal");           
+            JOptionPane.showMessageDialog(null, "Sigue Intentando");           
         } 
         palabraescrita = "";
         jL_Frase.setText(palabraescrita); 
@@ -832,6 +799,7 @@ public class Hangman extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -848,11 +816,11 @@ public class Hangman extends javax.swing.JFrame {
             this.setVisible(false);
         }
         String palabra = PrincipalV.SeleccionLista.get(Pos).getIng();
-        jLabel31.setText("Como se escribe: " + PrincipalV.SeleccionLista.get(Pos).getEsp().toLowerCase() + "  en ingles?");
+        jLabel31.setText("Como se escribe " + PrincipalV.SeleccionLista.get(Pos).getEsp().toLowerCase() + "  en ingles?");
         Pos++;
         try {
             ImageIcon Icono = new javax.swing.ImageIcon(getClass().getResource("/imagenes/" + PrincipalV.SeleccionLista.get(Pos-1).getEsp() + ".jpg"));
-            Icon icono = new javax.swing.ImageIcon(Icono.getImage().getScaledInstance(115, 115, Image.SCALE_DEFAULT));
+            Icon icono = new javax.swing.ImageIcon(Icono.getImage().getScaledInstance(240, 190, Image.SCALE_DEFAULT));
             jLImagen.setIcon(icono);
         } catch (Exception e) {
             jLImagen.setIcon(null);
